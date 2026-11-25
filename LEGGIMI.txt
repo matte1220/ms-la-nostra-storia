@@ -1,0 +1,49 @@
+PROGETTO M + S — LA NOSTRA STORIA
+==================================
+
+COSA C'È NELLA CARTELLA
+- index.html: struttura e testi del sito
+- style.css: colori, impaginazione e adattamento a PC/iPhone
+- script.js: interazioni della schermata iniziale
+- assets/: inserisci qui le vostre fotografie
+
+COME APRIRE IL SITO SUL PC WINDOWS
+1. Estrai il file ZIP in una cartella, per esempio sul Desktop.
+2. Apri la cartella "ms_sito".
+3. Fai doppio clic su index.html.
+4. Per la password dimostrativa usa: MS2026
+5. Il sito si apre nel browser. Provalo anche restringendo la finestra per vedere la versione mobile.
+
+COME AGGIUNGERE LE VOSTRE FOTO
+1. Copia una vostra foto nella cartella assets.
+2. Rinominala, per esempio, "noi.jpg".
+3. Apri index.html con Blocco note o un editor di testo.
+4. Cerca il riquadro della foto principale e sostituisci il blocco:
+   <div class="photo-placeholder">...</div>
+   con:
+   <img class="hero-photo" src="assets/noi.jpg" alt="Matteo e Sara">
+5. Per le altre foto, sostituisci i riquadri FOTO 01, FOTO 02 e FOTO 03 con tag img analoghi.
+6. Se aggiungi la classe hero-photo, inserisci in fondo a style.css:
+   .hero-photo { width:100%; height:330px; object-fit:cover; display:block; }
+   Per le foto della galleria puoi usare:
+   .gallery-photo { width:100%; height:230px; object-fit:cover; display:block; }
+   e applicare class="gallery-photo" alle immagini della galleria.
+
+COME MODIFICARE I TESTI
+- Apri index.html con Blocco note.
+- Cerca la frase che vuoi cambiare e sostituiscila.
+- Salva il file e aggiorna il browser.
+- La data precisa del primo incontro è lasciata come "fine marzo 2026": inserisci il giorno esatto solo se lo ricordi con certezza.
+
+IMPORTANTE SULLA PASSWORD E SULLA PRIVACY
+La password MS2026 è soltanto una schermata dimostrativa nel browser.
+Non è una protezione vera: chiunque abbia il link ai file pubblicati potrebbe aggirarla e leggere i contenuti.
+Non caricare online foto o testi privati finché non avremo configurato una protezione lato hosting (autenticazione/accesso riservato). Una password scritta nel JavaScript o nell'HTML non rende privato un sito.
+Quando passeremo alla pubblicazione, configureremo un sistema di accesso reale con una password condivisa, oppure accesso autorizzato, prima di inserire i ricordi personali.
+
+INAUGURAZIONE
+La bozza è impostata per il 25 dicembre 2026.
+Il racconto parte da fine marzo 2026 (giorno zero), passa dal primo messaggio del 7 aprile 2026 e prosegue con le tappe che aggiungeremo insieme.
+
+PROSSIMO PASSO
+Prima personalizziamo la storia e inseriamo le vostre foto. Poi scegliamo un servizio di pubblicazione con protezione reale e facciamo una prova da PC e iPhone.
