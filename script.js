@@ -9,7 +9,7 @@ const input = document.getElementById("password");
 const error = document.getElementById("gate-error");
 
 // DATA DI APERTURA DEL SITO
-const openingDate = new Date(2026, 11, 12, 0, 0, 0);
+const openingDate = new Date(2026, 10, 26, 0, 0, 0);
 
 // INGRESSO NEL SITO
 function enterSite() {
