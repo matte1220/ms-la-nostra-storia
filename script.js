@@ -33,3 +33,64 @@ document.getElementById("menu-button").addEventListener("click", () => {
 document.querySelectorAll("#nav a").forEach(link => {
   link.addEventListener("click", () => document.getElementById("nav").classList.remove("open"));
 });
+
+// REGALO DI NATALE 2026
+const christmasUnlockDate = new Date(2026, 11, 25, 0, 0, 0);
+
+function updateChristmasLock() {
+  const locked = document.getElementById("christmas-locked");
+  const unlocked = document.getElementById("christmas-unlocked");
+  const countdown = document.getElementById("christmas-countdown");
+
+  if (!locked || !unlocked) return;
+
+  const now = new Date();
+
+  if (now >= christmasUnlockDate) {
+    locked.hidden = true;
+    unlocked.hidden = false;
+  } else {
+    locked.hidden = false;
+    unlocked.hidden = true;
+
+    if (countdown) {
+      const days = Math.ceil((christmasUnlockDate - now) / 86400000);
+      countdown.textContent = `Mancano ${days} giorni a Natale. ♡`;
+    }
+  }
+}
+
+function openChristmasGift() {
+  document.getElementById("christmas-unlocked").hidden = true;
+  document.getElementById("christmas-reveal").hidden = false;
+}
+
+function showChristmasGift(number) {
+  const description = document.getElementById("gift-description");
+  const detail = document.getElementById("gift-detail");
+
+  if (number === 1) {
+    description.innerHTML = `
+      <h3>Un buono Sephora ♡</h3>
+      <p>Per scegliere qualcosa che ti piace e concederti un momento tutto tuo.</p>
+    `;
+  } else if (number === 2) {
+    description.innerHTML = `
+      <h3>Una collana ♡</h3>
+      <p>L'ho scelta pensando a te. Spero che ogni volta che la indosserai ti ricordi di questo Natale e del pensiero che c'è dietro.</p>
+    `;
+  } else {
+    return;
+  }
+
+  document.getElementById("christmas-reveal").hidden = true;
+  detail.hidden = false;
+}
+
+function backToChristmasGifts() {
+  document.getElementById("gift-detail").hidden = true;
+  document.getElementById("christmas-reveal").hidden = false;
+}
+
+updateChristmasLock();
+setInterval(updateChristmasLock, 1000);
