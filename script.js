@@ -9,7 +9,7 @@ const input = document.getElementById("password");
 const error = document.getElementById("gate-error");
 
 // DATA DI APERTURA DEL SITO
-const openingDate = new Date(2026, 10, 26, 0, 0, 0);
+const openingDate = new Date(2026, 11, 12, 0, 0, 0);
 
 // INGRESSO NEL SITO
 function enterSite() {
@@ -62,7 +62,7 @@ document.querySelectorAll("#nav a").forEach(link => {
 });
 
 // REGALO DI NATALE 2026
-const christmasUnlockDate = new Date(2026, 10, 26, 0, 0, 0);
+const christmasUnlockDate = new Date(2026, 11, 25, 0, 0, 0);
 
 function updateChristmasLock() {
   const locked = document.getElementById("christmas-locked");
