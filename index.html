@@ -262,5 +262,52 @@
   </div>
 </nav>
 
+<section class="section-pad music-section" id="canzone">
+  <p class="eyebrow">LA NOSTRA CANZONE</p>
+  <h2>I romantici<br><em>Tommaso Paradiso</em></h2>
+  <p>Una canzone che accompagnerà la nostra storia. ♡</p>
+
+  <div class="music-player">
+    <div id="ms-youtube-player"></div>
+
+    <div class="music-controls">
+      <button type="button" onclick="msStartMusic()">▶ START</button>
+      <button type="button" onclick="msStopMusic()">■ STOP</button>
+    </div>
+    <p class="music-note">M + S · ♡</p>
+  </div>
+</section>
+
+<script>
+  let msPlayer;
+
+  function onYouTubeIframeAPIReady() {
+    msPlayer = new YT.Player('ms-youtube-player', {
+      videoId: 'VZSkFxDQSlY',
+      playerVars: {
+        playsinline: 1,
+        controls: 1,
+        rel: 0
+      }
+    });
+  }
+
+  function msStartMusic() {
+    if (msPlayer && msPlayer.playVideo) {
+      msPlayer.playVideo();
+    }
+  }
+
+  function msStopMusic() {
+    if (msPlayer && msPlayer.stopVideo) {
+      msPlayer.stopVideo();
+    }
+  }
+
+  const msTag = document.createElement('script');
+  msTag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(msTag);
+</script>
+
 </body>
 </html>
