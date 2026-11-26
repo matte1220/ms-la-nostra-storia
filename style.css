@@ -367,3 +367,59 @@ section {
     scroll-behavior: auto !important;
   }
 }
+/* CAPITOLO 06 - REGALO DI NATALE */
+.christmas-gift {
+  text-align: center;
+  background: #f5efe8;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.envelope-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 30px auto;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: 420px;
+}
+
+.envelope-button img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(57, 37, 43, 0.18);
+  transition: transform 0.5s ease;
+}
+
+.envelope-button:hover img {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.envelope-button span {
+  color: #702d3d;
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+.christmas-reveal {
+  max-width: 500px;
+  margin: 25px auto 0;
+  color: #702d3d;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.christmas-reveal.show {
+  animation: msFadeUp 0.8s ease forwards;
+}
+
+.christmas-reveal[hidden] {
+  display: none;
+}
