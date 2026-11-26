@@ -477,3 +477,106 @@ section {
     display: none;
   }
 }
+/* REGALO DI NATALE */
+.christmas-gift {
+  text-align: center;
+  background: var(--ms-cream);
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+#christmas-locked,
+#christmas-unlocked,
+#christmas-reveal,
+#gift-detail {
+  max-width: 600px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+#christmas-locked img,
+.envelope-button img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 25px auto;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(57,37,43,.18);
+}
+
+.envelope-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px auto;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: 420px;
+}
+
+.envelope-button img {
+  transition: transform .4s ease;
+}
+
+.envelope-button:hover img {
+  transform: translateY(-6px);
+}
+
+.envelope-button span {
+  color: var(--ms-burgundy);
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+#christmas-countdown {
+  color: var(--ms-gold);
+  font-family: Georgia, serif;
+  margin-top: 18px;
+}
+
+#christmas-reveal button,
+#gift-detail button {
+  display: inline-block;
+  margin: 12px;
+  padding: 15px 25px;
+  background: #fffaf4;
+  color: var(--ms-burgundy);
+  border: 1px solid var(--ms-gold);
+  border-radius: 16px;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: transform .3s ease, background .3s ease;
+}
+
+#christmas-reveal button:hover,
+#gift-detail button:hover {
+  transform: translateY(-4px);
+  background: #f0e4d9;
+}
+
+#gift-description {
+  margin: 25px auto;
+  padding: 30px 22px;
+  background: #fffaf4;
+  border: 1px solid rgba(182,154,114,.55);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(57,37,43,.08);
+  color: var(--ms-dark);
+  font-family: Georgia, serif;
+  line-height: 1.8;
+}
+
+#gift-description h3 {
+  color: var(--ms-burgundy);
+  font-size: 25px;
+}
+
+#christmas-locked[hidden],
+#christmas-unlocked[hidden],
+#christmas-reveal[hidden],
+#gift-detail[hidden] {
+  display: none !important;
+}
