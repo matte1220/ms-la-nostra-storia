@@ -1,15 +1,18 @@
-// SCHERMATA DIMOSTRATIVA: questa password è solo un blocco visivo locale.
-// Non protegge davvero i contenuti se il sito viene pubblicato online.
-const DEMO_PASSWORD = "MS12426"; // Cambiala per la prova sul tuo computer.
 
+// PASSWORD
+const DEMO_PASSWORD = "MS12426";
+
+// ELEMENTI DEL SITO
 const gate = document.getElementById("gate");
 const site = document.getElementById("site");
 const input = document.getElementById("password");
 const error = document.getElementById("gate-error");
 
-function enterSite() {
-  const openingDate = new Date(2026, 11, 12, 0, 0, 0);
+// DATA DI APERTURA DEL SITO
+const openingDate = new Date(2026, 11, 12, 0, 0, 0);
 
+// INGRESSO NEL SITO
+function enterSite() {
   if (new Date() < openingDate) {
     error.textContent = "M+S si aprirà il 12 dicembre 2026. Ancora un po' di pazienza! ♡";
     return;
@@ -26,23 +29,34 @@ function enterSite() {
     input.focus();
   }
 }
-}
+
+// PULSANTE E TASTO INVIO
 document.getElementById("enter").addEventListener("click", enterSite);
+
 input.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") enterSite();
+  if (event.key === "Enter") {
+    enterSite();
+  }
 });
+
+// CONTROLLO DELLA SESSIONE
 if (
   sessionStorage.getItem("ms-demo-unlocked") === "yes" &&
-  new Date() >= new Date(2026, 11, 12, 0, 0, 0)
+  new Date() >= openingDate
 ) {
   gate.classList.add("hidden");
   site.classList.remove("hidden");
+}
 
+// MENU MOBILE
 document.getElementById("menu-button").addEventListener("click", () => {
   document.getElementById("nav").classList.toggle("open");
 });
+
 document.querySelectorAll("#nav a").forEach(link => {
-  link.addEventListener("click", () => document.getElementById("nav").classList.remove("open"));
+  link.addEventListener("click", () => {
+    document.getElementById("nav").classList.remove("open");
+  });
 });
 
 // REGALO DI NATALE 2026
@@ -71,7 +85,7 @@ function updateChristmasLock() {
   }
 }
 
-
+// APERTURA DEL REGALO
 function openChristmasGift() {
   const section = document.getElementById("christmas-unlocked");
   const envelope = section.querySelector(".envelope-button");
@@ -81,19 +95,10 @@ function openChristmasGift() {
   section.querySelector("p").hidden = true;
 
   reveal.hidden = false;
-  reveal.classList.add("christmas-appear");
+  reveal.classList.add("show");
 }
 
-  envelope.classList.add("envelope-opening");
-
-  setTimeout(() => {
-    section.hidden = true;
-    envelope.classList.remove("envelope-opening");
-    reveal.hidden = false;
-    reveal.classList.add("christmas-appear");
-  }, 800);
-}
-
+// MOSTRA LE SORPRESE
 function showChristmasGift(number) {
   const description = document.getElementById("gift-description");
   const detail = document.getElementById("gift-detail");
@@ -101,12 +106,12 @@ function showChristmasGift(number) {
   if (number === 1) {
     description.innerHTML = `
       <h3>Un buono Sephora ♡</h3>
-      <p>Anche se a te non serve truccarti perché sei già bellissima di tuo!.</p>
+      <p>Anche se a te non serve truccarti perché sei già bellissima di tuo!</p>
     `;
   } else if (number === 2) {
     description.innerHTML = `
       <h3>Una collana ♡</h3>
-      <p>Spero che ti piaccia e che quando la indosserei penserai a me, ti amo💕.</p>
+      <p>Spero che ti piaccia e che quando la indosserai penserai a me. Ti amo 💕</p>
     `;
   } else {
     return;
@@ -116,10 +121,13 @@ function showChristmasGift(number) {
   detail.hidden = false;
 }
 
+// TORNA ALLE SORPRESE
 function backToChristmasGifts() {
   document.getElementById("gift-detail").hidden = true;
   document.getElementById("christmas-reveal").hidden = false;
 }
 
+// AGGIORNAMENTO DEL REGALO
 updateChristmasLock();
 setInterval(updateChristmasLock, 1000);
+
