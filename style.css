@@ -713,3 +713,46 @@ section {
     object-fit: cover;
   }
 }
+/* STELLINE DORATE M+S */
+
+.golden-stars {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+.golden-star {
+  position: absolute;
+  top: -30px;
+  color: #b69a72;
+  font-size: 13px;
+  opacity: 0;
+  animation: goldenFall linear infinite;
+  text-shadow: 0 0 8px rgba(182, 154, 114, 0.5);
+}
+
+@keyframes goldenFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  85% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(110vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .golden-star {
+    animation: none;
+    display: none;
+  }
+}
