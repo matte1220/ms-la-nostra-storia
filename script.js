@@ -21,6 +21,7 @@ function enterSite() {
   if (input.value === DEMO_PASSWORD) {
     gate.classList.add("hidden");
     site.classList.remove("hidden");
+    createGoldenStars();
     sessionStorage.setItem("ms-demo-unlocked", "yes");
     window.scrollTo(0, 0);
   } else {
