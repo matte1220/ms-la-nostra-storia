@@ -1,6 +1,6 @@
 // SCHERMATA DIMOSTRATIVA: questa password è solo un blocco visivo locale.
 // Non protegge davvero i contenuti se il sito viene pubblicato online.
-const DEMO_PASSWORD = "MS2026"; // Cambiala per la prova sul tuo computer.
+const DEMO_PASSWORD = "MS12426"; // Cambiala per la prova sul tuo computer.
 
 const gate = document.getElementById("gate");
 const site = document.getElementById("site");
@@ -8,6 +8,13 @@ const input = document.getElementById("password");
 const error = document.getElementById("gate-error");
 
 function enterSite() {
+  const openingDate = new Date(2026, 11, 12, 0, 0, 0);
+
+  if (new Date() < openingDate) {
+    error.textContent = "M+S si aprirà il 12 dicembre 2026. Ancora un po' di pazienza! ♡";
+    return;
+  }
+
   if (input.value === DEMO_PASSWORD) {
     gate.classList.add("hidden");
     site.classList.remove("hidden");
@@ -19,14 +26,18 @@ function enterSite() {
     input.focus();
   }
 }
+}
 document.getElementById("enter").addEventListener("click", enterSite);
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter") enterSite();
 });
-if (sessionStorage.getItem("ms-demo-unlocked") === "yes") {
+if (
+  sessionStorage.getItem("ms-demo-unlocked") === "yes" &&
+  new Date() >= new Date(2026, 11, 12, 0, 0, 0)
+) {
   gate.classList.add("hidden");
   site.classList.remove("hidden");
-}
+
 document.getElementById("menu-button").addEventListener("click", () => {
   document.getElementById("nav").classList.toggle("open");
 });
