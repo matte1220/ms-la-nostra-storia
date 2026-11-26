@@ -66,6 +66,13 @@ function openChristmasGift() {
   const envelope = section.querySelector(".envelope-button");
   const reveal = document.getElementById("christmas-reveal");
 
+  envelope.hidden = true;
+  section.querySelector("p").hidden = true;
+
+  reveal.hidden = false;
+  reveal.classList.add("christmas-appear");
+}
+
   envelope.classList.add("envelope-opening");
 
   setTimeout(() => {
