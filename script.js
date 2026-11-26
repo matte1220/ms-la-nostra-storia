@@ -47,6 +47,7 @@ if (
 ) {
   gate.classList.add("hidden");
   site.classList.remove("hidden");
+  createGoldenStars();
 }
 
 // MENU MOBILE
