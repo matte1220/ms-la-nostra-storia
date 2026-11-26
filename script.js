@@ -130,4 +130,25 @@ function backToChristmasGifts() {
 // AGGIORNAMENTO DEL REGALO
 updateChristmasLock();
 setInterval(updateChristmasLock, 1000);
+// APERTURA FOTO INGRANDITE
+const lightbox = document.getElementById("photo-lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+
+document.querySelectorAll(".gallery-card img").forEach(photo => {
+  photo.addEventListener("click", () => {
+    lightboxImage.src = photo.src;
+    lightboxImage.alt = photo.alt;
+    lightbox.hidden = false;
+  });
+});
+
+lightbox.addEventListener("click", (event) => {
+  if (
+    event.target === lightbox ||
+    event.target.classList.contains("lightbox-close")
+  ) {
+    lightbox.hidden = true;
+    lightboxImage.src = "";
+  }
+});
 
