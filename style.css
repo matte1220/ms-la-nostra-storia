@@ -423,3 +423,57 @@ section {
 .christmas-reveal[hidden] {
   display: none;
 }
+/* CORREZIONE CAPITOLO 01 SU IPHONE */
+@media (max-width: 760px) {
+  #storia {
+    width: 100%;
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  #storia .section-heading {
+    display: block;
+    width: 100%;
+  }
+
+  #storia .section-heading > div {
+    width: 100%;
+  }
+
+  #storia .side-copy {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  #storia .timeline-list {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #storia .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  #storia .timeline-date {
+    text-align: left;
+  }
+
+  #storia .timeline-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #storia .timeline-content p {
+    max-width: 100%;
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  #storia .timeline-item::before,
+  #storia .timeline-dot {
+    display: none;
+  }
+}
