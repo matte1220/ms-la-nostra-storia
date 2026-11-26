@@ -151,4 +151,25 @@ lightbox.addEventListener("click", (event) => {
     lightboxImage.src = "";
   }
 });
+// PICCOLE STELLINE DORATE M+S
+function createGoldenStars() {
+  const container = document.createElement("div");
+  container.className = "golden-stars";
+  container.setAttribute("aria-hidden", "true");
 
+  for (let i = 0; i < 24; i++) {
+    const star = document.createElement("span");
+    star.className = "golden-star";
+    star.textContent = "✦";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 5 + "s";
+    star.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    container.appendChild(star);
+  }
+
+  document.body.appendChild(container);
+}
+
+createGoldenStars();
