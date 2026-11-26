@@ -60,9 +60,20 @@ function updateChristmasLock() {
   }
 }
 
+
 function openChristmasGift() {
-  document.getElementById("christmas-unlocked").hidden = true;
-  document.getElementById("christmas-reveal").hidden = false;
+  const section = document.getElementById("christmas-unlocked");
+  const envelope = section.querySelector(".envelope-button");
+  const reveal = document.getElementById("christmas-reveal");
+
+  envelope.classList.add("envelope-opening");
+
+  setTimeout(() => {
+    section.hidden = true;
+    envelope.classList.remove("envelope-opening");
+    reveal.hidden = false;
+    reveal.classList.add("christmas-appear");
+  }, 800);
 }
 
 function showChristmasGift(number) {
