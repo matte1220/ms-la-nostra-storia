@@ -326,8 +326,21 @@
   </button>
 
   <div id="christmas-reveal" class="christmas-reveal" hidden>
-    <p>La sorpresa è appena cominciata… ♡</p>
-  </div>
+  <p>La sorpresa è appena cominciata… ♡</p>
+
+  <button class="gift-box-button" type="button" onclick="openGiftBox()">
+    <span class="gift-box" id="gift-box">
+      <span class="gift-glow"></span>
+      <span class="gift-lid">
+        <span class="gift-ribbon"></span>
+      </span>
+      <span class="gift-base">
+        <span class="gift-ribbon"></span>
+      </span>
+    </span>
+    <span>Apri la scatolina ♡</span>
+  </button>
+</div>
 </section>
 
 <script>
@@ -336,6 +349,9 @@
     reveal.hidden = false;
     reveal.classList.add('show');
   }
+  function openGiftBox() {
+  document.getElementById('gift-box').classList.add('opened');
+}
 </script>
 </body>
 </html>
