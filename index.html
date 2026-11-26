@@ -308,6 +308,30 @@
   msTag.src = 'https://www.youtube.com/iframe_api';
   document.head.appendChild(msTag);
 </script>
+<section class="section-pad christmas-gift" id="regalo-natale">
+  <p class="eyebrow">UNA SORPRESA PER TE</p>
+  <h2>Il tuo regalo<br><em>di Natale.</em></h2>
+  <p>Ho preparato qualcosa di speciale. Tocca la busta per scoprirlo.</p>
 
+  <button class="envelope-button" type="button" onclick="openChristmasGift()">
+    <img
+      src="60F0ED03-C1B4-44B0-9FC3-914874FA6801.png"
+      alt="Il tuo regalo di Natale"
+    >
+    <span>Apri il tuo regalo ♡</span>
+  </button>
+
+  <div id="christmas-reveal" class="christmas-reveal" hidden>
+    <p>La sorpresa è appena cominciata… ♡</p>
+  </div>
+</section>
+
+<script>
+  function openChristmasGift() {
+    const reveal = document.getElementById('christmas-reveal');
+    reveal.hidden = false;
+    reveal.classList.add('show');
+  }
+</script>
 </body>
 </html>
