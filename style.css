@@ -756,3 +756,80 @@ section {
     display: none;
   }
 }
+/* CAPITOLO FINALE M+S */
+
+.final-message {
+  padding: 120px 24px;
+  background: #f5efe8;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.final-star {
+  display: block;
+  color: #b69a72;
+  font-size: 28px;
+  margin-bottom: 28px;
+}
+
+.final-message .eyebrow {
+  color: #b69a72;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+
+.final-message h2 {
+  color: #39252b;
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 5vw, 62px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 30px 0;
+}
+
+.final-message h2 em {
+  display: block;
+  color: #702d3d;
+  font-weight: 400;
+}
+
+.final-words {
+  color: #756368;
+  font-family: Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.final-divider {
+  display: block;
+  color: #b69a72;
+  font-size: 28px;
+  margin: 40px 0;
+}
+
+.final-signature {
+  color: #756368;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.final-signature strong {
+  color: #702d3d;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.final-initials {
+  display: block;
+  margin-top: 55px;
+  color: #b69a72;
+  letter-spacing: 8px;
+  font-size: 13px;
+}
