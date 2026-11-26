@@ -580,3 +580,37 @@ section {
 #gift-detail[hidden] {
   display: none !important;
 }
+/* ANIMAZIONE APERTURA REGALO */
+@keyframes envelopeOpen {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.06) translateY(-8px);
+  }
+  100% {
+    transform: scale(.85) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.envelope-opening {
+  animation: envelopeOpen .8s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes christmasReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.christmas-appear {
+  animation: christmasReveal .8s ease forwards;
+}
