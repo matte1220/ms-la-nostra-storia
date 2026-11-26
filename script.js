@@ -35,7 +35,7 @@ document.querySelectorAll("#nav a").forEach(link => {
 });
 
 // REGALO DI NATALE 2026
-const christmasUnlockDate = new Date(2026, 11, 25, 0, 0, 0);
+const christmasUnlockDate = new Date(2026, 10, 26, 0, 0, 0);
 
 function updateChristmasLock() {
   const locked = document.getElementById("christmas-locked");
@@ -72,12 +72,12 @@ function showChristmasGift(number) {
   if (number === 1) {
     description.innerHTML = `
       <h3>Un buono Sephora ♡</h3>
-      <p>Per scegliere qualcosa che ti piace e concederti un momento tutto tuo.</p>
+      <p>Anche se a te non serve truccarti perché sei già bellissima di tuo!.</p>
     `;
   } else if (number === 2) {
     description.innerHTML = `
       <h3>Una collana ♡</h3>
-      <p>L'ho scelta pensando a te. Spero che ogni volta che la indosserai ti ricordi di questo Natale e del pensiero che c'è dietro.</p>
+      <p>Spero che ti piaccia e che quando la indosserei penserai a me, ti amo💕.</p>
     `;
   } else {
     return;
