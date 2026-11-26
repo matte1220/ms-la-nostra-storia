@@ -729,7 +729,7 @@ section {
   color: #b69a72;
   font-size: 13px;
   opacity: 0;
-  animation: goldenFall linear infinite;
+  animation: goldenFall linear forwards;
   text-shadow: 0 0 8px rgba(182, 154, 114, 0.5);
 }
 
