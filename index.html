@@ -312,37 +312,39 @@
   msTag.src = 'https://www.youtube.com/iframe_api';
   document.head.appendChild(msTag);
 </script>
+
 <section class="section-pad christmas-gift" id="regalo-natale">
-  <p class="eyebrow">UNA SORPRESA PER TE</p>
+  <p class="eyebrow">25 DICEMBRE 2026 · UNA SORPRESA PER TE</p>
   <h2>Il tuo regalo<br><em>di Natale.</em></h2>
-  <p>Ho preparato qualcosa di speciale. Tocca la busta per scoprirlo.</p>
 
-  <button class="envelope-button" type="button" onclick="openChristmasGift()">
-    <img
-      src="60F0ED03-C1B4-44B0-9FC3-914874FA6801.png"
-      alt="Il tuo regalo di Natale"
-    >
-    <span>Apri il tuo regalo ♡</span>
-  </button>
+  <div id="christmas-locked">
+    <p>Qualcosa di speciale ti aspetta. Ma dovrai avere ancora un po' di pazienza… ♡</p>
+    <img src="60F0ED03-C1B4-44B0-9FC3-914874FA6801.png"
+         alt="Una sorpresa di Natale">
+    <p id="christmas-countdown"></p>
+  </div>
 
-  <div id="christmas-reveal" class="christmas-reveal" hidden>
-  <p>La sorpresa è appena cominciata… ♡</p>
+  <div id="christmas-unlocked" hidden>
+    <p>Finalmente è arrivato il momento. Apri la busta! ♡</p>
+    <button class="envelope-button" onclick="openChristmasGift()">
+      <img src="60F0ED03-C1B4-44B0-9FC3-914874FA6801.png"
+           alt="Apri la sorpresa">
+      <span>Apri il tuo regalo ♡</span>
+    </button>
+  </div>
 
-  <button class="gift-box-button" type="button" onclick="openGiftBox()">
-    <span class="gift-box" id="gift-box">
-      <span class="gift-glow"></span>
-      <span class="gift-lid">
-        <span class="gift-ribbon"></span>
-      </span>
-      <span class="gift-base">
-        <span class="gift-ribbon"></span>
-      </span>
-    </span>
-    <span>Apri la scatolina ♡</span>
-  </button>
-</div>
+  <div id="christmas-reveal" hidden>
+    <p>Ho preparato due sorprese per te. ♡</p>
+    <button onclick="showChristmasGift(1)">Sorpresa 01</button>
+    <button onclick="showChristmasGift(2)">Sorpresa 02</button>
+  </div>
+
+  <div id="gift-detail" hidden>
+    <h2>Il tuo regalo è…</h2>
+    <div id="gift-description"></div>
+    <button onclick="backToChristmasGifts()">Torna alle sorprese</button>
+  </div>
 </section>
-
 <script>
   function openChristmasGift() {
     const reveal = document.getElementById('christmas-reveal');
